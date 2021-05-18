@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Моя личная страница</title>
+<link rel="stylesheet" href="css/light.css" id="theme-link">
+</head>
+<body style="background-image: url(img/99px_ru_wallpaper_327043_devushka_sidit_na_obochine_avtostradi_na_fone_zakatnogo.jpg); background-size: 100%;">
+	<select id="theme">
+    <option value="light">Light</option>
+    <option value="auto">Dark</option>
+</select>
+<table valign="top" style="width: 50%; text-align: left; margin-left: auto; margin-right: auto;" border="4">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width: 968px; height: 196px">
+			<center><h1>Кавчик Дмитрий</h1></center>
+		</td>
+		</tr>
+		<tr><td align="center" valign="top" width="200px">
+			<div class="menu">
+			<a href="index.html">Главная</a>
+		  <a href="table.html">Таблица оценок</a>
+                  <a href="films.html">Мои любимые фильмы</a>
+                  <a href="3.html">3 слова которые могут меня описать</a>                  
+                  <a href="pictures.html">Картинки</a>
+                  <a href="quote.html">Цитата</a>	
+		  <a href="live.html">Где я живу</a>
+		  <a href="slideshow.html">Слайд-шоу</a>
+		  <a href="3dmodel.html">3D модель</a>
+		  <a href="me.html">Связь со мной</a>		  
+		</div>
+		<td>
+			<center>
+			<h2>Уравновешенный, ответственный, спокойный</h2>
+			<video autoplay muted loop poster="https://img-s3.onedio.com/id-5977c3f846f11d1d181028ec/rev-0/w-635/listing/f-jpg-gif-webp-webm-mp4/s-7bd54b00099847cb7a2ae9e522e49d710b48d2c7.webp" style="width: 479px vertical-align: middle;"><source type="video/webm" src="https://img-s3.onedio.com/id-5977c3f846f11d1d181028ec/rev-0/w-635/listing/f-jpg-gif-webp-webm-mp4/s-7bd54b00099847cb7a2ae9e522e49d710b48d2c7.webm"></video></center>
+		</td></tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+function applyTheme(theme) {
+    document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
+    document.body.classList.add(`theme-${theme}`);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+   document.querySelector("#theme").addEventListener("change", function() {
+        applyTheme(this.value);
+   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "auto";
+
+    applyTheme(savedTheme);
+
+    for (const optionElement of document.querySelectorAll("#theme option")) {
+        optionElement.selected = savedTheme === optionElement.value;
+    }
+
+    document.querySelector("#theme").addEventListener("change", function () {
+        localStorage.setItem("theme", this.value);
+        applyTheme(this.value);
+    });
+});
+</script>
+</body>
+</html>

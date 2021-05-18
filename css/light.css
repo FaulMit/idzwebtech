@@ -1,0 +1,76 @@
+body {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+.main-content {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color);
+}
+:root {
+    --dark-background-color: #111111;
+    --dark-text-color: #eeeeee;
+}
+
+body.theme-dark {
+    --background-color: var(--dark-background-color);
+    --text-color: var(dark-text-color);
+}
+@media (prefers-color-scheme: dark) {
+    body.theme-auto {
+        --background-color: var(--dark-background-color);
+        --text-color: var(--dark-text-color);
+    }
+}
+table {
+	height: 1000px;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    border-color: grey;
+    font-variant: normal;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+.menu {
+	display: block;
+	float: left;
+	margin: 3px 15px 5px 15px;
+}
+
+.menu a {
+	display: block;
+	margin: 2px auto 2px auto;
+	background: #E6E6E6;
+	width: 175px;
+	padding: 5px;
+	text-decoration: none;
+	font-family: 'PT Sans';
+	font-size: 16pt;
+	font-weight: bold;
+	font-size: 14pt;
+	border-bottom: 4px solid #A4A4A4;
+	color: black;
+}
+
+a:hover{
+	background: #eff;
+}
+
+a:active{
+	background: #fff;
+	border-bottom: 0;
+	border-top: 4px solid #A4A4A4;
+}

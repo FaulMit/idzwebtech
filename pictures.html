@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Моя личная страница</title>
+<link rel="stylesheet" href="css/light.css" id="theme-link">
+<style type="text/css">
+	.leftimg {
+		float:left;
+    	margin: 7px 7px 7px 0;
+	}
+
+.column {
+
+    float: left;
+    width: 10%;
+    padding: 75px;
+}
+
+
+.column img {
+	width: 150px;
+	height: 150px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.scale {
+    transition: 1s;
+   }
+   .scale:hover {
+    transform: scale(3);
+   }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+</head>
+<body style="background-image: url(img/99px_ru_wallpaper_327043_devushka_sidit_na_obochine_avtostradi_na_fone_zakatnogo.jpg); background-size: 100%;">
+	<select id="theme">
+    <option value="light">Light</option>
+    <option value="auto">Dark</option>
+</select>
+<table valign="top" style=" width: 50%; text-align: left; margin-left: auto; margin-right: auto;" border="4">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width: 968px; height: 196px">
+			<center><h1>Кавчик Дмитрий</h1></center>
+		</td>
+		</tr>
+		<tr><td align="center" valign="top" width="200px">
+			<div class="menu">
+				<a href="index.html">Главная</a>
+		  <a href="table.html">Таблица оценок</a>
+                  <a href="films.html">Мои любимые фильмы</a>
+                  <a href="3.html">3 слова которые могут меня описать</a>                  
+                  <a href="pictures.html">Картинки</a>
+                  <a href="quote.html">Цитата</a>	
+		  <a href="live.html">Где я живу</a>
+		  <a href="slideshow.html">Слайд-шоу</a>
+		  <a href="3dmodel.html">3D модель</a>
+		  <a href="me.html">Связь со мной</a>		  
+		</div>
+		<td>
+<center>
+<div class="row">
+  <div class="column">
+Счастливый
+    <img src="http://justcoolidea.ru/wp-content/uploads/2016/07/cats.jpg" alt="Котяра1"class="scale">
+  </div>
+  <div class="column">
+  	Грустный
+    <img src="https://ru.meming.world/images/ru/thumb/7/78/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BA%D0%BE%D1%82_3.jpg/300px-%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BA%D0%BE%D1%82_3.jpg" alt="Котыха2" class="scale">
+  </div>
+  <div class="column">
+  	Обычный
+    <img src="https://image1.thematicnews.com/uploads/images/68/22/64/02017/10/07/aa47713dff.jpg" alt="Котирок3" class="scale">
+  </div>
+</div>
+</center>
+		</td></tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+function applyTheme(theme) {
+    document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
+    document.body.classList.add(`theme-${theme}`);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+   document.querySelector("#theme").addEventListener("change", function() {
+        applyTheme(this.value);
+   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "auto";
+
+    applyTheme(savedTheme);
+
+    for (const optionElement of document.querySelectorAll("#theme option")) {
+        optionElement.selected = savedTheme === optionElement.value;
+    }
+
+    document.querySelector("#theme").addEventListener("change", function () {
+        localStorage.setItem("theme", this.value);
+        applyTheme(this.value);
+    });
+});
+</script>
+</body>
+</html>
